@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            margin-top: 0;
+        }
+        h2 {
+            color: #555;
+            border-bottom: 2px solid #f4f4f4;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        p {
+            line-height: 1.6;
+            color: #666;
+        }
+        ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .location-info {
+            margin: 20px 0;
+        }
+        .location-info button {
+            padding: 10px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        .location-info button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .location-info p {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Help Center</h1>
+        
+        <h2>Welcome to the Help Center</h2>
+        <p>If you need assistance with using our website, you've come to the right place. Below are some common topics that might help you get started:</p>
+        
+        <h2>Frequently Asked Questions</h2>
+        <ul>
+            <li><strong>How do I reset my password?</strong><br>To reset your password, go to the login page and click on "Forgot Password." Follow the instructions provided to reset your password.</li>
+            <li><strong>How can I contact support?</strong><br>You can contact our support team by emailing support@example.com or by filling out the contact form on our website.</li>
+            <li><strong>Where can I find more information about your services?</strong><br>More information about our services can be found on the "Services" page of our website.</li>
+        </ul>
+        
+        <h2>Contact Us</h2>
+        <p>If you have any other questions or need further assistance, please don't hesitate to reach out to us:</p>
+        <ul>
+            <li>Email: support@uzhavinar.com</li>
+            <li>Phone: +91 8857461230</li>
+            <li>Address: 1d,omr,chennai,Tamil Nadu</li>
+        </ul>
+        
+        <div class="location-info">
+            <h2>Find Nearest Helpdesk Location</h2>
+            <p>Click the button below to find the nearest helpdesk location based on your current location:</p>
+            <button id="findLocationBtn">Find Nearest Location</button>
+            <div id="locationDetails"></div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('findLocationBtn').addEventListener('click', () => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                document.getElementById('locationDetails').innerHTML = "Geolocation is not supported by this browser.";
+            }
+        });
+
+        function showPosition(position) {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            // Replace with actual API request or calculation to find nearest helpdesk
+            const locationDetails = `
+                <p>Your current location:</p>
+                <p>Latitude: ${lat}</p>
+                <p>Longitude: ${lon}</p>
+                <p>Finding nearest helpdesk location...</p>
+                <p><strong>Note:</strong> This is a placeholder. Implement your API or service to fetch nearest helpdesk details based on lat/lon.</p>
+            `;
+            document.getElementById('locationDetails').innerHTML = locationDetails;
+        }
+
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    document.getElementById('locationDetails').innerHTML = "User denied the request for Geolocation.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    document.getElementById('locationDetails').innerHTML = "Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    document.getElementById('locationDetails').innerHTML = "The request to get user location timed out.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    document.getElementById('locationDetails').innerHTML = "An unknown error occurred.";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

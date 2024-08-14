@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULAVAR - Purchase</title>
+    <style>
+        /* Add styles as needed */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .purchase-form {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        .purchase-form h2 {
+            margin-bottom: 20px;
+        }
+
+        .purchase-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .purchase-form input, .purchase-form select, .purchase-form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .purchase-form button {
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .purchase-form button:hover {
+            background-color: #e68a00;
+        }
+    </style>
+</head>
+<body>
+    <div class="purchase-form">
+        <h2>Complete Your Purchase</h2>
+        <form id="purchaseForm">
+            <label for="product">Product:</label>
+            <input type="text" id="product" name="product" readonly disabled>
+
+            <label for="price">Price:</label>
+            <input type="text" id="price" name="price" readonly disabled>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <button type="submit">Confirm Purchase</button>
+        </form>
+    </div>
+
+    <script>
+        // Extract product information from the URL
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById('product').value = params.get('product');
+        document.getElementById('price').value = params.get('price');
+    </script>
+</body>
+</html>

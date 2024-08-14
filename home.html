@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding-top: 40px; /* Space from the top */
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            margin: 30px 0;
+            height: 60vh; /* Adjust height for a more balanced look */
+        }
+
+        .row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .image img {
+            max-width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            display: block;
+            max-height: 100%; /* Limit height to prevent overflow */
+        }
+
+        .text {
+            background-color: #f4f4f4;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center text vertically */
+            text-align: center;
+        }
+
+        .text h1 {
+            margin: 0;
+            font-size: 2rem; /* Medium font size */
+        }
+
+        .text p {
+            margin-top: 10px;
+            font-size: 1.2rem; /* Medium font size */
+        }
+    </style>
+</head>
+<body>
+    <h1 class = "content text">About Us</h1>
+    <div class="container">
+        <div class="row">
+            <div class="content image">
+                <img src="https://t3.ftcdn.net/jpg/03/76/16/72/360_F_376167286_60oQi8n8Ztj8FObqanyrTREx6BHKOXJL.jpg" alt="Image 1">
+            </div>
+            <div class="content text">
+                <h1>Welcome to Uzhavinar</h1>
+                <p>Uzhavinar is your one-stop platform connecting farmers with consumers. Buy fresh produce directly from farmers and explore a range of agricultural products. Our marketplace bridges the gap between farm and table, ensuring quality and transparency. Join Uzhavinar to support local agriculture and access the best farm-fresh products.</p>
+            </div>
+        </div>
+        <div class="row reverse">
+            <div class="content image">
+                <img src="https://s7d1.scene7.com/is/image/wbcollab/digital_agriculture3?qlt=90&fmt=webp&resMode=sharp2" alt="Image 2">
+            </div>
+            <div class="content text">
+                <h1>Our Services</h1>
+                <p>At Uzhavinar, we provide high-quality agricultural products directly to customers, eliminating middlemen for fairer prices. Farmers can connect and collaborate with each other, enhancing their network and opportunities. Enjoy fresh produce and seamless transactions with our farmer-to-consumer model.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

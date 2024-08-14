@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uzhavinar.com</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            position: relative; /* For positioning profile section */
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li ,.profile{
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a ,.profile{
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .profile-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: none; /* Initially hidden */
+        }
+        .profile-container p {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+        }
+        .profile-container button {
+            margin-top: 10px;
+            padding: 8px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .profile-container button:hover {
+            background-color: #d32f2f;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .product-item {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .product-item img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        .image img {
+            max-width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            display: block;
+            max-height: 100%; /* Limit height to prevent overflow */
+        }
+        .text {
+            background-color: #f4f4f4;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center text vertically */
+            text-align: center;
+        }
+        .container a{
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="content text">UZHAVINAR</h1>
+        <nav>
+            <ul id="navLinks">
+                <li><a href="products.html">Products</a></li>
+                <li><a href="FarmerToFarmer.html">Farmer to Farmer</a></li>
+                <li><a href="Help.html">Help</a></li>
+                <li><a href="home.html">About Us</a></li>
+                <li><a href="login.html" id="loginLink">LogIn</a></li>
+            </ul>
+        </nav>
+        <div class="profile" id="profileContainer">
+            <p id="profileName">Welcome, Guest</p>
+            <button id="logout" style="background-color: #d32f2f;
+            padding: 8px;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer" >Logout</button>
+        </div>
+    </header>
+
+    <section id="About Us">
+        <div class="container">
+            <h2>Welcome to Our Website</h2>
+            <p>We offer a variety of products and resources for farmers. Explore our site to learn more about what we have to offer and how we can help you succeed.</p>
+        </div>
+    </section>
+
+    <section id="products">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="product-list">
+                <div class="product-item">
+                    <img src="https://static.wixstatic.com/media/c37125_c3b924dede954599b0d67d5063df092e~mv2.jpg/v1/fill/w_230,h_153,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c37125_c3b924dede954599b0d67d5063df092e~mv2.jpg" alt="Product 1">
+                    <h3>Fruits & Vegetables</h3>
+                    <p>Variety of fruits and vegetables</p>
+                </div>
+                <div class="product-item">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/000/161/717/small/farming.jpg" alt="Product 2">
+                    <h3>Agriculture Tools</h3>
+                    <p>All types of agriculture tools available.</p>
+                </div>
+                <div class="product-item">
+                    <img src="https://st3.depositphotos.com/1689803/13637/i/450/depositphotos_136372094-stock-photo-farmer-hand-giving-chemical-fertilizer.jpg" alt="Product 3">
+                    <h3>Fertilizers</h3>
+                    <p>All types of fertilizers for healthy soil</p>
+                </div>
+                <div class="product-item">
+                    <img src="https://media.istockphoto.com/id/1176979263/photo/large-group-of-wholegrain-food-shot-on-rustic-wooden-table.jpg?s=612x612&w=0&k=20&c=PKk6_tz2g0xds5hxQwTCAxCIN2HY4IkcuMLLn19nN58=" alt="Product 4">
+                    <h3>Grains</h3>
+                    <p>A variety of Indian grains</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="farmer-to-farmer">
+        <div class="container">
+            <h2>Farmer to Farmer</h2>
+            <p>Our Farmer to Farmer program connects experienced farmers with those looking to learn and grow. Share knowledge, exchange tips, and collaborate on improving farming practices.</p>
+        </div>
+    </section>
+
+    <section id="help">
+        <div class="container">
+            <h2><a href="Help.html">Help</a></h2>
+            <p>If you need assistance, please reach out to our support team. We are here to help with any questions or issues you may have.</p>
+        </div>
+    </section>
+
+    <script>
+        // Retrieve user data from localStorage
+        const username = localStorage.getItem('username');
+
+        if (username) {
+            // Display the profile information and hide login link
+            document.getElementById('profileName').textContent = `Welcome, ${username}`;
+            document.getElementById('profileContainer').style.display = 'block';
+            document.getElementById('loginLink').style.display = 'none';
+        } else {
+            // Hide profile section and show login link
+            document.getElementById('profileContainer').style.display = 'none';
+            document.getElementById('loginLink').style.display = 'inline';
+        }
+
+        // Logout button functionality
+        document.getElementById('logout').addEventListener('click', function() {
+            localStorage.removeItem('username'); // Remove user data from localStorage
+            window.location.href = "login.html"; // Redirect to login page
+        });
+    </script>
+</body>
+</html>

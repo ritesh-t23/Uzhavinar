@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People Profile Listing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .profile-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .profile-img {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .profile-content {
+            flex: 2;
+            padding: 20px;
+        }
+
+        .profile-content h2 {
+            margin: 0 0 10px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .profile-content p {
+            color: #777;
+            line-height: 1.6;
+        }
+
+        .profile-content .role {
+            color: #007bff;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .profile-content .contact-btn {
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .profile-content .contact-btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <div class="profile-img" style="background-image: url('https://t3.ftcdn.net/jpg/04/32/15/18/360_F_432151892_oQ3YQDo2LYZPILlEMnlo55PjjgiUwnQb.jpg');"></div>
+            <div class="profile-content">
+                <h2>Muthu Raman</h2>
+                <p class="role">Tamil Nadu</p>
+                <p>Farmer from Tamil Nadu who cultivate rice and wheat</p>
+                <a href="mailto:johndoe@example.com" class="contact-btn">Contact</a>
+            </div>
+        </div>
+
+        <div class="profile-card">
+            <div class="profile-img" style="background-image: url('https://www.octavius.in/cdn/shop/articles/image_0f6a7667-0c57-4e99-92bb-cca3cc43068e.jpg?v=1635168184');"></div>
+            <div class="profile-content">
+                <h2>Malar</h2>
+                <p class="role">Ooty</p>
+                <p>I am from Ooty i grow tea leaves </p>
+                <a href="mailto:janesmith@example.com" class="contact-btn">Contact</a>
+            </div>
+        </div>
+
+        <div class="profile-card">
+            <div class="profile-img" style="background-image: url('https://i.pinimg.com/736x/d1/42/d8/d142d8b7a2e493ab8e6523ec42a5c420.jpg');"></div>
+            <div class="profile-content">
+                <h2>Veera Raghavan</h2>
+                <p class="role">Trichy</p>
+                <p>I cultivate vegetable and fruits like Tomato,mangos</p>
+                <a href="mailto:michaeljohnson@example.com" class="contact-btn">Contact</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

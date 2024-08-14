@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture Site Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://example.com/background-image.jpg') no-repeat center center fixed;
+            background-image: url("https://wallpaper.forfun.com/fetch/40/40a224f3eea104742a5432c42daa58f3.jpeg");
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+            position: relative;
+        }
+
+        .login-container h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 5px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-container button:hover {
+            background-color: #45a049;
+        }
+
+        .login-container a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+
+        .login-container i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Uzhavinar Login</h1>
+        <form onsubmit="return false;">
+            <input type="text" name="username" id="uname" placeholder="Username" required>
+            <i class='bx bx-user'></i>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <button type="submit" id="submit">Login</button>
+        </form>
+        <p>Forgot your <a href="#">password?</a></p>
+    </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAYnhoyRMQkfLp0ABiyUkeM9FxvcuWsZ8A",
+            authDomain: "uzhavinar4.firebaseapp.com",
+            projectId: "uzhavinar4",
+            storageBucket: "uzhavinar4.appspot.com",
+            messagingSenderId: "214194257224",
+            appId: "1:214194257224:web:79170c564679367080077d"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        document.getElementById("submit").addEventListener('click', function() {
+            const username = document.getElementById("uname").value;
+            const password = document.getElementById("password").value;
+
+            // Save user data to Firebase Database
+            set(ref(db, 'user/' + username), {
+                username: username,
+                password: password,
+            }).then(() => {
+                // Save username to localStorage
+                localStorage.setItem('username', username);
+
+                // Display alert on successful login
+                alert("Login Successful");
+                
+                // Redirect to the main page after alert is acknowledged
+                window.location.href = "Main.html"; // Redirects to your Main.html page
+            }).catch((error) => {
+                // Handle possible errors here
+                console.error("Error saving data:", error);
+                alert("Login Failed: " + error.message);
+            });
+        });
+    </script>
+</body>
+</html>
